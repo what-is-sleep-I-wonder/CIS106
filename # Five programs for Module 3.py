@@ -3,11 +3,11 @@
 #1  Allow the user to enter the stock ticker symbol (ie MSFT for Microsoft), number of shares and cost per share.
 #   Compute and display amount invested to be number of shares times cost per share. 
 
-Tickersym = input("Enter the stock ticker symbol: ")
+tickerSym = input("Enter the stock ticker symbol: ")
 numShares = int(input("Enter the number of shares: "))
 costPerShare = float(input("Enter the cost per share: "))
 amountInvested = numShares * costPerShare
-print(f"Amount invested in {Tickersym}: ${amountInvested:.2f}")
+print(f"Amount invested in {tickerSym}: ${amountInvested:.2f}")
 
 #2  The student will enter their last name, midterm and final exam scores (0 – 100 points). Compute the total exam
 #   points to be the sum of 40% of midterm and 60% of the final exam.  Display student last name and total exam points.
