@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M3P3"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-31 10:41:15 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzEwOjA5OjQwIEFNOzIzNDQ="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzEwOjQxOjE1IEFNOzI7MjQ1MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="AmountPaid" type="Real" array="False" size=""/>
+            <input variable="AmountPaid"/>
+            <output expression="AmountPaid/3" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

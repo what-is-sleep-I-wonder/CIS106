@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Problem 1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-31 09:51:38 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzA5OjQzOjI5IEFNOzIzNTc="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzA5OjUxOjM4IEFNOzE7MjQ2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="TickerSym" type="String" array="False" size=""/>
+            <declare name="NumShares, CostPerShare" type="Real" array="False" size=""/>
+            <input variable="TickerSym"/>
+            <input variable="NumShares"/>
+            <input variable="CostPerShare"/>
+            <output expression="TickerSym" newline="True"/>
+            <output expression="NumShares * CostPerShare" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

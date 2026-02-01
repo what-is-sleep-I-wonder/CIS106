@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M3P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-31 10:54:20 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzEwOjQyOjI5IEFNOzIzNDg="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTMxOzEwOjU0OjIwIEFNOzQ7MjQ1Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Make, Model" type="String" array="False" size=""/>
+            <declare name="MSRP, DiscountPercent, DiscountPrice" type="Integer" array="False" size=""/>
+            <input variable="Make"/>
+            <input variable="Model"/>
+            <input variable="MSRP"/>
+            <input variable="DiscountPercent"/>
+            <output expression="Make" newline="True"/>
+            <output expression="Model" newline="True"/>
+            <output expression="MSRP" newline="True"/>
+            <output expression="DiscountPercent" newline="True"/>
+            <output expression="MSRP - (MSRP * (DiscountPercent/100))" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
