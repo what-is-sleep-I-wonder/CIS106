@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M4P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-05 07:20:16 PM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDItMDU7MDc6MTU6NTcgUE07Mjg2Mg=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDItMDU7MDc6MjA6MTYgUE07MTsyOTYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Exam1, Exam2, Exam1Score, Exam2Score" type="Integer" array="False" size=""/>
+            <input variable="Exam1"/>
+            <input variable="Exam2"/>
+            <assign variable="Exam1Score" expression="Exam1 * 0.60"/>
+            <assign variable="Exam2Score" expression="Exam2 * 0.40"/>
+            <output expression="Exam1Score + Exam2Score" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

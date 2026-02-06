@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M4P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-06 11:11:37 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzExOjAzOjM3IEFNOzIzNDg="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzExOjExOjM3IEFNOzI7MjQ1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="StepsWalked" type="Integer" array="False" size=""/>
+            <declare name="CalPerStep, CalsBurned" type="Real" array="False" size=""/>
+            <declare name="FirstName" type="String" array="False" size=""/>
+            <assign variable="CalPerStep" expression="0.25"/>
+            <input variable="FirstName"/>
+            <input variable="StepsWalked"/>
+            <assign variable="CalsBurned" expression="StepsWalked * CalPerStep"/>
+            <output expression="FirstName" newline="True"/>
+            <output expression="CalsBurned" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

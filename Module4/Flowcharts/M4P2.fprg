@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M4P2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-06 10:35:29 AM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDItMDU7MDc6MzM6MjIgUE07Mjg1NA=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDItMDU7MDg6MjQ6MTIgUE07NTsyOTY2"/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzEwOjM1OjI5IEFNOzE7MjQ2MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="PurchPricePerShare, CurStockPrice, QuantityStock, CurValueStock" type="Real" array="False" size=""/>
+            <declare name="Gain" type="String" array="False" size=""/>
+            <input variable="PurchPricePerShare"/>
+            <input variable="CurStockPrice"/>
+            <input variable="QuantityStock"/>
+            <assign variable="CurValueStock" expression="(CurStockPrice - PurchPricePerShare) * QuantityStock"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M4P3"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-06 11:03:34 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzEwOjM4OjUxIEFNOzIzNTE="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzExOjAzOjM0IEFNOzQ7MjQ1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="MealCost, Tip15, Tip18, Tip20, TipValue15, TipValue18, TipValue20, TotalWithTip15, TotalWithTip18, TotalWithTip20" type="Real" array="False" size=""/>
+            <input variable="MealCost"/>
+            <assign variable="Tip15" expression="0.15"/>
+            <assign variable="Tip18" expression="0.18"/>
+            <assign variable="Tip20" expression="0.20"/>
+            <assign variable="TipValue15" expression="MealCost * Tip15"/>
+            <assign variable="TipValue18" expression="MealCost * Tip18"/>
+            <assign variable="TipValue20" expression="MealCost * Tip20"/>
+            <assign variable="TotalWithTip15" expression="MealCost + TipValue15"/>
+            <assign variable="TotalWithTip18" expression="MealCost + TipValue18"/>
+            <assign variable="TotalWithTip20" expression="MealCost + TipValue20"/>
+            <output expression="MealCost" newline="True"/>
+            <output expression="TipValue15" newline="True"/>
+            <output expression="TotalWithTip15" newline="True"/>
+            <output expression="MealCost" newline="True"/>
+            <output expression="TipValue18" newline="True"/>
+            <output expression="TotalWithTip18" newline="True"/>
+            <output expression="MealCost" newline="True"/>
+            <output expression="TipValue20" newline="True"/>
+            <output expression="TotalWithTip20" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

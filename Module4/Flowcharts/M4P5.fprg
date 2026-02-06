@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M4P5"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-06 11:33:11 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzExOjE5OjQ4IEFNOzIzNTc="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTA2OzExOjMzOjExIEFNOzI7MjQ1Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FixedCosts, PricePerUnit, CostPerUnit, BreakEven" type="Real" array="False" size=""/>
+            <input variable="FixedCosts"/>
+            <input variable="PricePerUnit"/>
+            <input variable="CostPerUnit"/>
+            <assign variable="BreakEven" expression="FixedCosts / (PricePerUnit-CostPerUnit)"/>
+            <output expression="BreakEven" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
