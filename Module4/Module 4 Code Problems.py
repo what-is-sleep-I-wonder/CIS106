@@ -52,7 +52,7 @@ print("Total with 20% tip:", TotalWithTip20)
 #Display first name and calories burned.
 
 CalPerStep = 0.25
-FirstName = input("Enter you first name: )")
+FirstName = input("Enter you first name: ")
 StepsWalked = int(input("Enter the number of steps walked in a day: "))
 CaloriesBurned = StepsWalked * CalPerStep
 print(FirstName, "you burned", CaloriesBurned, "calories today.")
@@ -65,4 +65,5 @@ FixedCosts = float(input("Enter your fixed costs: "))
 PricePerUnit = float(input("Enter the price per unit: "))
 CostPerUnit = float(input("Enter the cost per unit: "))
 BreakEvenPoint = FixedCosts / (PricePerUnit - CostPerUnit)
+
 print("The break-even point is", BreakEvenPoint, "units.")
