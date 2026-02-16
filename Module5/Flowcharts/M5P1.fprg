@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M5P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-12 10:27:43 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEyOzA5OjQzOjE0IFBNOzIzNjY="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEyOzEwOjI3OjQzIFBNOzQ7MjQ3Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Tax, UnitPrice, ExtendedPrice, TotalPrice" type="Real" array="False" size=""/>
+            <assign variable="Tax" expression="0.07"/>
+            <declare name="UnitQuantity" type="Integer" array="False" size=""/>
+            <input variable="UnitQuantity"/>
+            <if expression="UnitQuantity &lt; 1000">
+                <then>
+                    <assign variable="UnitPrice" expression="5.00"/>
+                    <assign variable="ExtendedPrice" expression="UnitPrice * UnitQuantity"/>
+                </then>
+                <else>
+                    <assign variable="UnitPrice" expression="3.00"/>
+                    <assign variable="ExtendedPrice" expression="UnitPrice * UnitQuantity"/>
+                </else>
+            </if>
+            <assign variable="TotalPrice" expression="(ExtendedPrice * Tax) + ExtendedPrice"/>
+            <output expression="UnitQuantity" newline="True"/>
+            <output expression="UnitPrice" newline="True"/>
+            <output expression="ExtendedPrice" newline="True"/>
+            <output expression="Tax" newline="True"/>
+            <output expression="TotalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

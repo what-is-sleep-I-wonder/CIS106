@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M5P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-13 10:42:52 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEyOzEwOjQ5OjI3IFBNOzIzNjg="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEzOzEwOjQyOjUyIEFNOzM7MjQ1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ItemName" type="String" array="False" size=""/>
+            <declare name="Warranty, ItemCost, WarrantyCost, FinalCost" type="Real" array="False" size=""/>
+            <input variable="ItemName"/>
+            <input variable="ItemCost"/>
+            <if expression="ItemCost &gt; 1000">
+                <then>
+                    <assign variable="Warranty" expression="0.1"/>
+                    <assign variable="WarrantyCost" expression="ItemCost * Warranty"/>
+                </then>
+                <else>
+                    <assign variable="Warranty" expression="0.05"/>
+                    <assign variable="WarrantyCost" expression="ItemCost * Warranty"/>
+                </else>
+            </if>
+            <assign variable="FinalCost" expression="ItemCost + WarrantyCost"/>
+            <output expression="ItemName" newline="True"/>
+            <output expression="ItemCost" newline="True"/>
+            <output expression="WarrantyCost" newline="True"/>
+            <output expression="FinalCost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

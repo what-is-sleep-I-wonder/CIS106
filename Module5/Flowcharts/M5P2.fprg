@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M5P2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-12 10:35:59 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEyOzEwOjI3OjU1IFBNOzIzNjU="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEyOzEwOjM1OjU5IFBNOzI7MjQ3Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="UnitName" type="String" array="False" size=""/>
+            <declare name="UnitQuantity" type="Integer" array="False" size=""/>
+            <declare name="UnitPrice, ExtendedPrice" type="Real" array="False" size=""/>
+            <input variable="UnitName"/>
+            <input variable="UnitQuantity"/>
+            <if expression="UnitName = &quot;A&quot;">
+                <then>
+                    <assign variable="UnitPrice" expression="10.00"/>
+                    <assign variable="ExtendedPrice" expression="UnitQuantity * UnitPrice"/>
+                </then>
+                <else>
+                    <assign variable="UnitPrice" expression="20.00"/>
+                    <assign variable="ExtendedPrice" expression="UnitQuantity * UnitPrice"/>
+                </else>
+            </if>
+            <output expression="UnitName" newline="True"/>
+            <output expression="UnitQuantity" newline="True"/>
+            <output expression="UnitPrice" newline="True"/>
+            <output expression="ExtendedPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

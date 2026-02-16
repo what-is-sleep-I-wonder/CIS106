@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M5P5"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-13 11:02:38 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEzOzEwOjQzOjU4IEFNOzIzNTI="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTEzOzExOjAyOjM4IEFNOzE7MjQ1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="False" size=""/>
+            <declare name="NumDependents" type="Integer" array="False" size=""/>
+            <declare name="GrossIncome, Tax, AdjustedGrossIncome, IncomeTax" type="Real" array="False" size=""/>
+            <input variable="LastName"/>
+            <input variable="NumDependents"/>
+            <input variable="GrossIncome"/>
+            <assign variable="AdjustedGrossIncome" expression="GrossIncome - (NumDependents * 12000)"/>
+            <if expression="AdjustedGrossIncome &gt; 50000">
+                <then>
+                    <assign variable="Tax" expression="0.20"/>
+                    <assign variable="IncomeTax" expression="AdjustedGrossIncome * Tax"/>
+                </then>
+                <else>
+                    <assign variable="Tax" expression="0.10"/>
+                    <assign variable="IncomeTax" expression="AdjustedGrossIncome * Tax"/>
+                </else>
+            </if>
+            <if expression="IncomeTax &lt; 0">
+                <then>
+                    <assign variable="IncomeTax" expression="100"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="LastName" newline="True"/>
+            <output expression="GrossIncome" newline="True"/>
+            <output expression="NumDependents" newline="True"/>
+            <output expression="AdjustedGrossIncome" newline="True"/>
+            <output expression="IncomeTax" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
