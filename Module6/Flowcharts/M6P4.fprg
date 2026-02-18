@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-18 02:13:46 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTE3OzAyOjUyOjI2IFBNOzIzNjc="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTE4OzAyOjEzOjQ2IFBNOzI7MjQ3Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NumTickets" type="Integer" array="False" size=""/>
+            <declare name="TicketPrice, TotalCost" type="Real" array="False" size=""/>
+            <input variable="NumTickets"/>
+            <if expression="NumTickets &gt;= 25">
+                <then>
+                    <assign variable="TicketPrice" expression="50.00"/>
+                </then>
+                <else>
+                    <if expression="10 &lt;= NumTickets &lt; 25">
+                        <then>
+                            <assign variable="TicketPrice" expression="60.00"/>
+                        </then>
+                        <else>
+                            <if expression="5 &lt;= NumTickets &lt; 10">
+                                <then>
+                                    <assign variable="TicketPrice" expression="70.00"/>
+                                </then>
+                                <else>
+                                    <assign variable="TicketPrice" expression="75.00"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="TotalCost" expression="NumTickets * TicketPrice"/>
+            <output expression="NumTickets" newline="True"/>
+            <output expression="TicketPrice" newline="True"/>
+            <output expression="TotalCost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

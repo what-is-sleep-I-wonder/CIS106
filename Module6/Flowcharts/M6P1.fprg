@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-17 01:12:43 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTE3OzEyOjUxOjE4IFBNOzIzNjg="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTE3OzAxOjEyOjQzIFBNOzI7MjQ3MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NumWidgets, QuantityWidgets" type="Integer" array="False" size=""/>
+            <declare name="Price, ExtendedPrice, Tax, FinalPrice" type="Real" array="False" size=""/>
+            <assign variable="Tax" expression="0.07"/>
+            <input variable="QuantityWidgets"/>
+            <if expression="QuantityWidgets &gt; 10000">
+                <then>
+                    <assign variable="Price" expression="10.00"/>
+                    <assign variable="ExtendedPrice" expression="QuantityWidgets * Price"/>
+                </then>
+                <else>
+                    <if expression="QuantityWidgets &gt; 5000">
+                        <then>
+                            <assign variable="Price" expression="20.00"/>
+                        </then>
+                        <else>
+                            <assign variable="Price" expression="30.00"/>
+                        </else>
+                    </if>
+                    <assign variable="ExtendedPrice" expression="QuantityWidgets * Price"/>
+                </else>
+            </if>
+            <assign variable="FinalPrice" expression="(ExtendedPrice * Tax) + ExtendedPrice"/>
+            <output expression="ExtendedPrice" newline="True"/>
+            <output expression="Tax" newline="True"/>
+            <output expression="FinalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
