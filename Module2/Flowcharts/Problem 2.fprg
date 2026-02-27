@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Problem 2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-22 09:04:19 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA4OjU3OjA0IFBNOzIzNjk="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA5OjA0OjE5IFBNOzM7MjQ3OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="False" size=""/>
+            <declare name="Hours, PayRate" type="Real" array="False" size=""/>
+            <input variable="LastName"/>
+            <input variable="Hours"/>
+            <input variable="Payrate"/>
+            <declare name="GrossPay" type="Real" array="False" size=""/>
+            <assign variable="GrossPay" expression="Hours * Payrate"/>
+            <output expression="LastName" newline="True"/>
+            <output expression="GrossPay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

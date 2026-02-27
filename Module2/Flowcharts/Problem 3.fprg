@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Problem 3"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-22 09:31:53 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA5OjA0OjI5IFBNOzIzNjk="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA5OjMxOjUzIFBNOzQ7MjQ3Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Length, Width, Area, Perimeter" type="Real" array="False" size=""/>
+            <input variable="Length"/>
+            <input variable="Width"/>
+            <assign variable="Area" expression="Length * Width"/>
+            <assign variable="Perimeter" expression="(2 * Length) + (2 * Width)"/>
+            <output expression="Area" newline="True"/>
+            <output expression="Perimeter" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

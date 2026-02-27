@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Problem 5"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-01-22 09:34:12 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA5OjE1OjE0IFBNOzIzNjU="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAxLTIyOzA5OjM0OjEyIFBNOzM7MjQ3NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ItemPrice, DiscountPercent, DiscountedPrice" type="Real" array="False" size=""/>
+            <input variable="ItemPrice"/>
+            <input variable="DiscountPercent"/>
+            <assign variable="DiscountedPrice" expression="ItemPrice - (DiscountPercent * ItemPrice)"/>
+            <output expression="DiscountPercent" newline="True"/>
+            <output expression="DiscountedPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
