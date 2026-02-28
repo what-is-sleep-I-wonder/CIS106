@@ -1,0 +1,10 @@
+Anderson
+100000
+Davidson
+50000
+Kingston
+125000
+Marin
+80000
+Smith
+45000

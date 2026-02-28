@@ -1,0 +1,15 @@
+Hammer
+10
+12
+Saw
+3
+8
+Screwdriver
+12
+10
+Caulk
+20
+15
+Notepads
+50
+4
