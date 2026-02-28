@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M8P5"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-27 11:59:26 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI3OzEyOjA4OjQ5IEFNOzIzNjA="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI3OzExOjU5OjI2IEFNOzY7MjQ3Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName, Code" type="String" array="False" size=""/>
+            <declare name="CostPer, TuitionOwed, TotalTuition" type="Real" array="False" size=""/>
+            <declare name="CreditHours, NumStudents" type="Integer" array="False" size=""/>
+            <assign variable="TotalTuition" expression="0"/>
+            <assign variable="NumStudents" expression="0"/>
+            <open expression="&quot;M8P5 Text File.txt&quot;" mode="read"/>
+            <while expression="!EOF()">
+                <assign variable="NumStudents" expression="NumStudents + 1"/>
+                <read variable="LastName"/>
+                <read variable="Code"/>
+                <read variable="CreditHours"/>
+                <if expression="Code = &quot;I&quot;">
+                    <then>
+                        <assign variable="CostPer" expression="250.00"/>
+                    </then>
+                    <else>
+                        <assign variable="CostPer" expression="500.00"/>
+                    </else>
+                </if>
+                <assign variable="TuitionOwed" expression="CreditHours * CostPer"/>
+                <output expression="LastName" newline="True"/>
+                <output expression="CreditHours" newline="True"/>
+                <output expression="TuitionOwed" newline="True"/>
+                <assign variable="TotalTuition" expression="TotalTuition + TuitionOwed"/>
+            </while>
+            <output expression="TotalTuition" newline="True"/>
+            <output expression="NumStudents" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

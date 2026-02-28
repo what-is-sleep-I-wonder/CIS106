@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M8P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-26 10:14:38 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI2OzA5OjQyOjExIFBNOzIzNjc="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI2OzEwOjE0OjM4IFBNOzQ7MjQ3OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Year, InterestRate" type="Integer" array="False" size=""/>
+            <declare name="Principal, InterestPercent, AnnualInterest, EndingBalance" type="Real" array="False" size=""/>
+            <assign variable="Year" expression="1"/>
+            <input variable="Principal"/>
+            <input variable="InterestRate"/>
+            <assign variable="InterestPercent" expression="InterestRate / 100"/>
+            <while expression="Year &lt;= 5">
+                <assign variable="AnnualInterest" expression="Principal * InterestPercent"/>
+                <assign variable="EndingBalance" expression="Principal + AnnualInterest"/>
+                <output expression="Year" newline="True"/>
+                <output expression="Principal" newline="True"/>
+                <output expression="EndingBalance" newline="True"/>
+                <assign variable="Principal" expression="EndingBalance"/>
+                <assign variable="Year" expression="Year + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

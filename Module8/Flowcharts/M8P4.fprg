@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M8P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-02-27 12:08:29 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI2OzExOjU3OjQwIFBNOzIzNjg="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAyLTI3OzEyOjA4OjI5IEFNOzU7MjQ3MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="FileName, ItemName" type="String" array="False" size=""/>
+            <declare name="Quantity, NumOrders" type="Integer" array="False" size=""/>
+            <assign variable="NumOrders" expression="0"/>
+            <declare name="ItemPrice, ExtendedPrice, TotalPrices, AverageOrderPrice" type="Real" array="False" size=""/>
+            <assign variable="TotalPrices" expression="0.00"/>
+            <assign variable="FileName" expression="&quot;M8P4 Text File.txt&quot;"/>
+            <open expression="FileName" mode="read"/>
+            <while expression="!EOF()">
+                <assign variable="NumOrders" expression="NumOrders + 1"/>
+                <read variable="ItemName"/>
+                <read variable="Quantity"/>
+                <read variable="ItemPrice"/>
+                <assign variable="ExtendedPrice" expression="Quantity * ItemPrice"/>
+                <output expression="ItemName" newline="True"/>
+                <output expression="Quantity" newline="True"/>
+                <output expression="ItemPrice" newline="True"/>
+                <output expression="ExtendedPrice" newline="True"/>
+                <assign variable="TotalPrices" expression="TotalPrices + ExtendedPrice"/>
+            </while>
+            <assign variable="AverageOrderPrice" expression="TotalPrices / NumOrders"/>
+            <output expression="NumOrders" newline="True"/>
+            <output expression="AverageOrderPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
