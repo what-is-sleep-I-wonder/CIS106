@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M9P2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-12 07:38:27 PM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMTI7MDY6MTA6NDggUE07Mjg1NQ=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMTI7MDc6Mzg6MjcgUE07MTE7MzAyMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="EnterName, PlayerName" type="String" array="False" size=""/>
+            <declare name="AtBats, Hits, NumPlayers" type="Integer" array="False" size=""/>
+            <declare name="BattingAverage" type="Real" array="False" size=""/>
+            <assign variable="PlayerName" expression="&quot;&quot;"/>
+            <assign variable="AtBats" expression="0"/>
+            <assign variable="Hits" expression="0"/>
+            <assign variable="BattingAverage" expression="0"/>
+            <assign variable="NumPlayers" expression="0"/>
+            <input variable="EnterName"/>
+            <while expression="EnterName = &quot;Yes&quot;">
+                <output expression="&quot;Enter Player's Name&quot;" newline="True"/>
+                <input variable="PlayerName"/>
+                <output expression="&quot;Enter Number of Times At Bat&quot;" newline="True"/>
+                <input variable="AtBats"/>
+                <output expression="&quot;Enter the Number of Hits&quot;" newline="True"/>
+                <input variable="Hits"/>
+                <assign variable="NumPlayers" expression="NumPlayers + 1"/>
+                <call expression="BatAve(AtBats, Hits)"/>
+                <output expression="LastName" newline="True"/>
+                <output expression="BattingAverage" newline="True"/>
+                <output expression="&quot;Enter another player?&quot;" newline="True"/>
+            </while>
+            <output expression="NumPlayers" newline="True"/>
+        </body>
+    </function>
+    <function name="BatAve" type="Real" variable="BattingAverage">
+        <parameters>
+            <parameter name="AtBats" type="Integer" array="False"/>
+            <parameter name="Hits" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="BattingAverage" type="Real" array="False" size=""/>
+            <assign variable="BattingAverage" expression="Hits / AtBats"/>
+        </body>
+    </function>
+</flowgorithm>

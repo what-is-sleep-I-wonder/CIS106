@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M11P2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-24 11:01:33 AM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMjQ7MTA6NTk6NDAgQU07Mjg0Mw=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMjQ7MTE6MDE6MzMgQU07MTsyOTQx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="False" size=""/>
+            <declare name="Exam1, Exam2, Exam3, TotalPoints" type="Integer" array="False" size=""/>
+            <declare name="ExamAverage" type="Real" array="False" size=""/>
+            <input variable="LastName"/>
+            <input variable="Exam1"/>
+            <input variable="Exam2"/>
+            <input variable="Exam3"/>
+        </body>
+    </function>
+</flowgorithm>

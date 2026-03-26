@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M10P2"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-20 10:24:02 AM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMTk7MDc6MTM6NDAgUE07Mjg1OA=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMjA7MTA6MjQ6MDIgQU07MjA7Mjk4Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Make, Model, Continue, ElectricVehicleCode" type="String" array="False" size=""/>
+            <declare name="MSRP, FinalPrice" type="Real" array="False" size=""/>
+            <do expression="Continue = &quot;Yes&quot;">
+                <output expression="&quot;Enter Vehicle Make: &quot;" newline="True"/>
+                <input variable="Make"/>
+                <output expression="&quot;Enter Vehicle Model: &quot;" newline="True"/>
+                <input variable="Model"/>
+                <output expression="&quot;Enter Electric Vehicle Code (Y/N): &quot;" newline="True"/>
+                <input variable="ElectricVehicleCode"/>
+                <output expression="&quot;Enter MSRP: &quot;" newline="True"/>
+                <input variable="MSRP"/>
+                <call expression="DiscountCheck(Make, Model, ElectricVehicleCode, MSRP)"/>
+                <assign variable="FinalPrice" expression="DiscountCheck(Make, Model, ElectricVehicleCode, MSRP)"/>
+                <output expression="FinalPrice" newline="True"/>
+                <output expression="&quot;Find another discount?&quot;" newline="True"/>
+                <input variable="Continue"/>
+            </do>
+            <output expression="&quot;Have a nice day!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="DiscountCheck" type="Real" variable="FinalPrice">
+        <parameters>
+            <parameter name="Make" type="String" array="False"/>
+            <parameter name="Model" type="String" array="False"/>
+            <parameter name="ElectricVehicleCode" type="String" array="False"/>
+            <parameter name="MSRP" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="PercentOff, FinalPrice" type="Real" array="False" size=""/>
+            <if expression="Make = &quot;Honda&quot;">
+                <then>
+                    <if expression="Model = &quot;Accord&quot;">
+                        <then>
+                            <assign variable="PercentOff" expression="0.10"/>
+                        </then>
+                        <else>
+                            <assign variable="PercentOff" expression="0.05"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="Make = &quot;Toyota&quot;">
+                        <then>
+                            <if expression="Model = &quot;Rav4&quot;">
+                                <then>
+                                    <assign variable="PercentOff" expression="0.15"/>
+                                </then>
+                                <else>
+                                    <assign variable="PercentOff" expression="0.05"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="PercentOff" expression="0.05"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="ElectricVehicleCode = &quot;Y&quot;">
+                <then>
+                    <assign variable="PercentOff" expression="0.30"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="FinalPrice" expression="MSRP - (MSRP * PercentOff)"/>
+        </body>
+    </function>
+</flowgorithm>

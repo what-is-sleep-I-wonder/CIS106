@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M9P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-24 11:58:24 AM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMTA7MDE6MDI6MDkgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMTI7MDY6MzU6MDIgUE07MjA7MzAwOQ=="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzExOjU4OjI0IEFNOzI7MjQ2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Quantity" type="Integer" array="False" size=""/>
+            <declare name="UnitPrice, Discount, ExtendedPrice, TotalExtendedPrice" type="Real" array="False" size=""/>
+            <declare name="Continue" type="String" array="False" size=""/>
+            <assign variable="Discount" expression="0.10"/>
+            <assign variable="ExtendedPrice" expression="0"/>
+            <assign variable="TotalExtendedPrice" expression="0"/>
+            <output expression="&quot;Would you like to enter compute the price?&quot;" newline="True"/>
+            <input variable="Continue"/>
+            <while expression="Continue = &quot;Yes&quot;">
+                <output expression="&quot;Enter the quantity of an item&quot;" newline="True"/>
+                <input variable="Quantity"/>
+                <output expression="&quot;Enter the price of the item&quot;" newline="True"/>
+                <input variable="UnitPrice"/>
+                <output expression="&quot;Calculating...&quot;" newline="True"/>
+                <call expression="ExtendedPrice (Quantity, UnitPrice, ExtendedPrice, Discount)"/>
+                <assign variable="ExtendedPrice" expression="ExtendedPrice(Quantity, UnitPrice, ExtendedPrice, Discount)"/>
+                <output expression="Quantity" newline="True"/>
+                <output expression="UnitPrice" newline="True"/>
+                <output expression="ExtendedPrice" newline="True"/>
+                <assign variable="TotalExtendedPrice" expression="TotalExtendedPrice + ExtendedPrice"/>
+                <output expression="&quot;Enter another item?&quot;" newline="True"/>
+                <input variable="Continue"/>
+            </while>
+            <output expression="TotalExtendedPrice" newline="True"/>
+        </body>
+    </function>
+    <function name="ExtendedPrice" type="Real" variable="ExtendedPrice">
+        <parameters>
+            <parameter name="Quantity" type="Integer" array="False"/>
+            <parameter name="UnitPrice" type="Real" array="False"/>
+            <parameter name="ExtendedPrice" type="Real" array="False"/>
+            <parameter name="Discount" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="ExtendedPrice" expression="Quantity * UnitPrice"/>
+            <if expression="ExtendedPrice &gt; 10000.00">
+                <then>
+                    <assign variable="ExtendedPrice" expression="ExtendedPrice - (ExtendedPrice * Discount)"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

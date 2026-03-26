@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M11P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-24 10:57:38 AM"/>
+        <attribute name="created" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMjQ7MDk6MjY6MjIgQU07Mjg0NQ=="/>
+        <attribute name="edited" value="a2VucG87TEFQVE9QLTRVMU0wUkw5OzIwMjYtMDMtMjQ7MTA6NTc6MzggQU07MjY7MzAxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Quantity" type="Integer" array="False" size=""/>
+            <declare name="ItemPrice, DiscountRate, DiscountAmount, DiscountPrice" type="Real" array="False" size=""/>
+            <assign variable="DiscountAmount" expression="0"/>
+            <assign variable="DiscountPrice" expression="0"/>
+            <output expression="&quot;Enter Quantity: &quot;" newline="True"/>
+            <input variable="Quantity"/>
+            <output expression="&quot;Enter Price: &quot;" newline="True"/>
+            <input variable="ItemPrice"/>
+            <output expression="&quot;Enter Discount Rate: &quot;" newline="True"/>
+            <input variable="DiscountRate"/>
+            <assign variable="DiscountRate" expression="DiscountRate / 100"/>
+            <comment text="USE ONE FUNCTION IN ACTUAL CODE"/>
+            <call expression="Discount(Quantity, ItemPrice, DiscountRate, DiscountAmount, DiscountPrice)"/>
+            <call expression="Discount2(Quantity, ItemPrice, DiscountRate, DiscountAmount, DiscountPrice)"/>
+            <assign variable="DiscountAmount" expression="Discount(Quantity, ItemPrice, DiscountRate, DiscountAmount, DiscountPrice)"/>
+            <assign variable="DiscountPrice" expression="Discount2(Quantity, ItemPrice, DiscountRate, DiscountAmount, DiscountPrice)"/>
+            <output expression="Quantity" newline="True"/>
+            <output expression="ItemPrice" newline="True"/>
+            <output expression="DiscountRate" newline="True"/>
+            <output expression="DiscountAmount" newline="True"/>
+            <output expression="DiscountPrice" newline="True"/>
+        </body>
+    </function>
+    <function name="Discount" type="Real" variable="DiscountAmount">
+        <parameters>
+            <parameter name="Quantity" type="Integer" array="False"/>
+            <parameter name="ItemPrice" type="Real" array="False"/>
+            <parameter name="DiscountRate" type="Real" array="False"/>
+            <parameter name="DiscountAmount" type="Real" array="False"/>
+            <parameter name="DiscountPrice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="DiscountAmount" expression="(Quantity * ItemPrice) * DiscountRate"/>
+            <assign variable="DiscountPrice" expression="(Quantity * ItemPrice) - DiscountAmount"/>
+        </body>
+    </function>
+    <function name="Discount2" type="Real" variable="DiscountPrice">
+        <parameters>
+            <parameter name="Quantity" type="Integer" array="False"/>
+            <parameter name="ItemPrice" type="Real" array="False"/>
+            <parameter name="DiscountRate" type="Real" array="False"/>
+            <parameter name="DiscountAmount" type="Real" array="False"/>
+            <parameter name="DiscountPrice" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="DiscountAmount" expression="(Quantity * ItemPrice) * DiscountRate"/>
+            <assign variable="DiscountPrice" expression="(Quantity * ItemPrice) - DiscountAmount"/>
+        </body>
+    </function>
+</flowgorithm>
