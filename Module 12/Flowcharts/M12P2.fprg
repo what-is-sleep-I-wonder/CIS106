@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M12P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-24 11:08:52 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzEwOjQwOjU3IFBNOzIzNjY="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzExOjA4OjUyIFBNOzE4OzI1MzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="True" size="10"/>
+            <assign variable="LastName[0]" expression="&quot;A&quot;"/>
+            <assign variable="LastName[1]" expression="&quot;B&quot;"/>
+            <assign variable="LastName[2]" expression="&quot;C&quot;"/>
+            <assign variable="LastName[3]" expression="&quot;D&quot;"/>
+            <assign variable="LastName[4]" expression="&quot;E&quot;"/>
+            <assign variable="LastName[5]" expression="&quot;F&quot;"/>
+            <assign variable="LastName[6]" expression="&quot;G&quot;"/>
+            <assign variable="LastName[7]" expression="&quot;H&quot;"/>
+            <assign variable="Lastname[8]" expression="&quot;I&quot;"/>
+            <assign variable="LastName[9]" expression="&quot;J&quot;"/>
+            <declare name="Score" type="Integer" array="True" size="10"/>
+            <assign variable="Score[0]" expression="100"/>
+            <assign variable="Score[1]" expression="90"/>
+            <assign variable="Score[2]" expression="80"/>
+            <assign variable="Score[3]" expression="70"/>
+            <assign variable="Score[4]" expression="60"/>
+            <assign variable="Score[5]" expression="50"/>
+            <assign variable="Score[6]" expression="40"/>
+            <assign variable="Score[7]" expression="30"/>
+            <assign variable="Score[8]" expression="20"/>
+            <assign variable="Score[9]" expression="10"/>
+            <output expression="&quot;Names with scores: &quot;" newline="True"/>
+            <call expression="DisplayInOrder(LastName, Score)"/>
+        </body>
+    </function>
+    <function name="DisplayInOrder" type="None" variable="">
+        <parameters>
+            <parameter name="LastName" type="String" array="True"/>
+            <parameter name="Score" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <assign variable="Index" expression="0"/>
+            <for variable="Index" start="0" end="9" direction="inc" step="1">
+                <output expression="LastName[index]" newline="True"/>
+                <output expression="Score[index]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

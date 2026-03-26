@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M12P4"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-25 11:49:00 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI1OzExOjM1OjMzIEFNOzIzNTE="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI1OzExOjQ5OjAwIFBNOzU1OzI1MzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName2" type="String" array="True" size="10"/>
+            <declare name="Name" type="String" array="False" size=""/>
+            <declare name="BatAverage" type="Real" array="True" size="10"/>
+            <declare name="BattingAve" type="String" array="False" size=""/>
+            <declare name="Count" type="Integer" array="False" size=""/>
+            <declare name="SearchName" type="String" array="False" size=""/>
+            <declare name="Result" type="String" array="False" size=""/>
+            <assign variable="Result" expression="&quot;&quot;"/>
+            <assign variable="Count" expression="0"/>
+            <open expression="&quot;Problem 4 File.txt&quot;" mode="read"/>
+            <while expression="NOT EOF()">
+                <read variable="Name"/>
+                <assign variable="LastName2[Count]" expression="Name"/>
+                <read variable="BattingAve"/>
+                <assign variable="BatAverage[Count]" expression="toReal(BattingAve)"/>
+                <assign variable="Count" expression="Count + 1"/>
+            </while>
+            <call expression="Display(LastName2, BatAverage)"/>
+            <output expression="&quot;Would you like to search for a player? (Enter Yes/No)&quot;" newline="True"/>
+            <input variable="SearchName"/>
+            <while expression="SearchName = &quot;Yes&quot;">
+                <call expression="Search(LastName2, Result)"/>
+                <output expression="Result" newline="True"/>
+                <output expression="&quot;Search for another Player? (Enter Yes/No)&quot;" newline="True"/>
+                <input variable="SearchName"/>
+            </while>
+        </body>
+    </function>
+    <function name="Display" type="None" variable="">
+        <parameters>
+            <parameter name="LastName2" type="String" array="True"/>
+            <parameter name="BatAverage" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <assign variable="Index" expression="0"/>
+            <for variable="Index" start="0" end="9" direction="inc" step="1">
+                <output expression="&quot;Player Name: &quot; &amp;LastName2[Index]" newline="True"/>
+                <output expression="&quot;Batting Average: &quot; &amp;BatAverage[Index]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="Search" type="String" variable="Result">
+        <parameters>
+            <parameter name="LastName2" type="String" array="True"/>
+            <parameter name="Result" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Found" type="Boolean" array="False" size=""/>
+            <assign variable="Found" expression="FALSE"/>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <assign variable="Index" expression="0"/>
+            <declare name="SearchName" type="String" array="False" size=""/>
+            <output expression="&quot;Search for name: &quot;" newline="True"/>
+            <input variable="SearchName"/>
+            <for variable="Index" start="0" end="9" direction="inc" step="1">
+                <if expression="LastName2[Index] == SearchName">
+                    <then>
+                        <assign variable="Found" expression="TRUE"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="Found = TRUE">
+                    <then>
+                        <assign variable="Index" expression="9"/>
+                        <assign variable="Result" expression="&quot;Player Found!&quot;"/>
+                    </then>
+                    <else>
+                        <assign variable="Index" expression="Index + 1"/>
+                        <assign variable="Result" expression="&quot;Player Not Found!&quot;"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

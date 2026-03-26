@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M12P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-24 11:02:49 PM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzEwOjQwOjU3IFBNOzIzNjY="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzExOjAyOjQ5IFBNOzExOzI1MjM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="True" size="10"/>
+            <assign variable="LastName[0]" expression="&quot;A&quot;"/>
+            <assign variable="LastName[1]" expression="&quot;B&quot;"/>
+            <assign variable="LastName[2]" expression="&quot;C&quot;"/>
+            <assign variable="LastName[3]" expression="&quot;D&quot;"/>
+            <assign variable="LastName[4]" expression="&quot;E&quot;"/>
+            <assign variable="LastName[5]" expression="&quot;F&quot;"/>
+            <assign variable="LastName[6]" expression="&quot;G&quot;"/>
+            <assign variable="LastName[7]" expression="&quot;H&quot;"/>
+            <assign variable="Lastname[8]" expression="&quot;I&quot;"/>
+            <assign variable="LastName[9]" expression="&quot;J&quot;"/>
+            <output expression="&quot;Names in Order: &quot;" newline="True"/>
+            <call expression="DisplayInOrder(LastName)"/>
+            <output expression="&quot;Names in reverse order: &quot;" newline="True"/>
+            <call expression="DisplayInReverse(LastName)"/>
+        </body>
+    </function>
+    <function name="DisplayInOrder" type="None" variable="">
+        <parameters>
+            <parameter name="LastName" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <assign variable="Index" expression="0"/>
+            <for variable="Index" start="0" end="9" direction="inc" step="1">
+                <output expression="LastName[index]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="DisplayInReverse" type="None" variable="">
+        <parameters>
+            <parameter name="LastName" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Index" type="Integer" array="False" size=""/>
+            <assign variable="Index" expression="9"/>
+            <for variable="Index" start="9" end="0" direction="dec" step="1">
+                <output expression="LastName[Index]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M12P1"/>
+        <attribute name="authors" value="kenpo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-25 11:34:56 AM"/>
+        <attribute name="created" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI0OzEwOjQwOjU3IFBNOzIzNjY="/>
+        <attribute name="edited" value="a2VucG87Sk9ITl9QQzsyMDI2LTAzLTI1OzExOjM0OjU2IEFNOzc0OzI1MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="LastName" type="String" array="True" size="10"/>
+            <declare name="Name" type="String" array="False" size=""/>
+            <declare name="ScoreList" type="Integer" array="True" size="10"/>
+            <declare name="Score" type="String" array="False" size=""/>
+            <declare name="Counter" type="Integer" array="False" size=""/>
+            <declare name="HighName" type="String" array="False" size=""/>
+            <declare name="HighScore" type="Integer" array="False" size=""/>
+            <declare name="LowName" type="String" array="False" size=""/>
+            <declare name="LowScore" type="Integer" array="False" size=""/>
+            <declare name="FirstRecord" type="Boolean" array="False" size=""/>
+            <assign variable="Counter" expression="0"/>
+            <assign variable="FirstRecord" expression="True"/>
+            <open expression="&quot;Problem 3 File.txt&quot;" mode="read"/>
+            <while expression="NOT EOF()">
+                <read variable="Name"/>
+                <read variable="Score"/>
+                <assign variable="LastName[Counter]" expression="Name"/>
+                <assign variable="ScoreList[Counter]" expression="toInteger(Score)"/>
+                <assign variable="Counter" expression="Counter + 1"/>
+                <if expression="FirstRecord">
+                    <then>
+                        <assign variable="HighScore" expression="toInteger(Score)"/>
+                        <assign variable="LowScore" expression="toInteger(Score)"/>
+                        <assign variable="HighName" expression="Name"/>
+                        <assign variable="LowName" expression="Name"/>
+                        <assign variable="FirstRecord" expression="False"/>
+                    </then>
+                    <else>
+                        <if expression="toInteger(Score) &gt; HighScore">
+                            <then>
+                                <assign variable="HighScore" expression="toInteger(Score)"/>
+                                <assign variable="HighName" expression="Name"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <if expression="toInteger(Score) &lt; LowScore">
+                            <then>
+                                <assign variable="LowScore" expression="toInteger(Score)"/>
+                                <assign variable="LowName" expression="Name"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <close mode="read"/>
+            <call expression="DisplayResults(HighName, HighScore, LowName, LowScore)"/>
+        </body>
+    </function>
+    <function name="DisplayResults" type="None" variable="">
+        <parameters>
+            <parameter name="HighName" type="String" array="False"/>
+            <parameter name="HighScore" type="Integer" array="False"/>
+            <parameter name="LowName" type="String" array="False"/>
+            <parameter name="LowScore" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;The Highest Score is &quot; &amp;HighScore &amp;&quot; belonging to &quot; &amp;HighName" newline="True"/>
+            <output expression="&quot;The Lowest Score is &quot; &amp;LowScore &amp;&quot; belonging to &quot; &amp;LowName" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
